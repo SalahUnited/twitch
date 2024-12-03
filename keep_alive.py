@@ -9,8 +9,8 @@ def index():
     return "Alive"
 
 def run():
-    # Получаем порт из переменной окружения, если она задана
-    port = int(os.environ.get('PORT', 8080))  # По умолчанию будет использоваться 8080
+    # Получаем порт из переменной окружения, которая будет настроена Render
+    port = int(os.environ.get('PORT', 8080))  # Если переменная PORT не установлена, используем 8080
     app.run(host='0.0.0.0', port=port, debug=True, threaded=True)
 
 def keep_alive():  
